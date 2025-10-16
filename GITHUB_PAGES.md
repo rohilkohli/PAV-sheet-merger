@@ -2,21 +2,18 @@
 
 This repository is configured to deploy the PAV Sheet Merger web interface to GitHub Pages automatically.
 
-## Enabling GitHub Pages
+## Automatic GitHub Pages Setup
 
-To enable GitHub Pages for this repository, the repository owner needs to:
+The workflow is now configured to automatically enable GitHub Pages when it runs. No manual configuration is required!
 
-1. Go to the repository Settings
-2. Navigate to "Pages" in the left sidebar
-3. Under "Build and deployment":
-   - Source: Select "GitHub Actions"
-4. Save the settings
-
-Once enabled, the workflow will automatically deploy the site when changes are pushed to the `main` branch.
+When you merge this PR to the `main` branch, the GitHub Actions workflow will:
+1. Automatically enable GitHub Pages for the repository
+2. Configure it to use GitHub Actions as the source
+3. Deploy the web interface
 
 ## Accessing the Web Interface
 
-After deployment, the web interface will be available at:
+After the first successful deployment, the web interface will be available at:
 ```
 https://rohilkohli.github.io/PAV-sheet-merger/
 ```
@@ -28,6 +25,7 @@ https://rohilkohli.github.io/PAV-sheet-merger/
 The `.github/workflows/deploy-pages.yml` file contains the deployment configuration:
 - Triggers on pushes to the `main` branch
 - Can also be manually triggered via workflow_dispatch
+- **Automatically enables GitHub Pages** if not already enabled
 - Uses official GitHub Pages actions for deployment
 - Deploys the entire repository root (including index.html)
 
