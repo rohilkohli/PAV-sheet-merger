@@ -30,18 +30,18 @@ Automated deployment configuration that:
 
 ## 🚀 Next Steps (For Repository Owner)
 
-To activate GitHub Pages deployment:
+The workflow is now configured to automatically enable and deploy GitHub Pages! Simply:
 
-1. **Go to Repository Settings**
-   - Navigate to: `https://github.com/rohilkohli/PAV-sheet-merger/settings/pages`
+1. **Merge This PR**
+   - When you merge this PR to the `main` branch, the workflow will automatically run
 
-2. **Configure GitHub Pages**
-   - Under "Build and deployment"
-   - Source: Select **"GitHub Actions"**
-   - Click Save
+2. **Automatic Setup & Deployment**
+   - The workflow will automatically enable GitHub Pages
+   - Configure it to use GitHub Actions as the source
+   - Deploy the web interface
+   - All of this happens automatically - no manual configuration needed!
 
-3. **Wait for Deployment**
-   - The workflow will run automatically when you merge this PR
+3. **Monitor Deployment**
    - Check the "Actions" tab to monitor deployment progress
    - Deployment typically takes 1-2 minutes
 
