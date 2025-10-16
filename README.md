@@ -2,7 +2,17 @@
 
 A platform to intelligently merge Physical Asset Verification (PAV) sheets from multiple engineers into a single consolidated Excel file.
 
-## 🚀 Quick Start
+## 🌐 Web Version (GitHub Pages)
+
+**Try it online:** [https://rohilkohli.github.io/PAV-sheet-merger/](https://rohilkohli.github.io/PAV-sheet-merger/)
+
+The web version allows you to:
+- Upload multiple Excel files directly in your browser
+- Merge them instantly without installing anything
+- Download the merged result
+- All processing happens client-side (your data never leaves your browser)
+
+## 🚀 Quick Start (Command Line)
 
 ```bash
 # Install dependencies
@@ -47,7 +57,16 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Basic Usage
+### Web Interface (Recommended)
+
+Visit [https://rohilkohli.github.io/PAV-sheet-merger/](https://rohilkohli.github.io/PAV-sheet-merger/) to use the online tool:
+1. Upload your Excel files
+2. Click "Merge Files"
+3. Download the merged result
+
+All processing happens in your browser - no data is sent to any server.
+
+### Command-Line Usage
 
 Merge two or more PAV sheets:
 
