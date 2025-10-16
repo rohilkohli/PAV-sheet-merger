@@ -24,19 +24,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    # Use GH_PAGES_DEPLOY_TOKEN secret if set (personal access token with repo scope). Otherwise fall back to GITHUB_TOKEN.
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_PAGES_DEPLOY_TOKEN != '' && secrets.GH_PAGES_DEPLOY_TOKEN || secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       
       - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          enablement: true
-          # Pass the token explicitly; prefer a PAT stored as GH_PAGES_DEPLOY_TOKEN if available, otherwise use the built-in GITHUB_TOKEN
-          token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN != '' && secrets.GH_PAGES_DEPLOY_TOKEN || secrets.GITHUB_TOKEN }}
+        uses: actions/configure-pages@v5
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
