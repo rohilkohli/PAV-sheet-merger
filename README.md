@@ -2,6 +2,18 @@
 
 A platform to intelligently merge Physical Asset Verification (PAV) sheets from multiple engineers into a single consolidated Excel file.
 
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Merge your PAV sheets
+python pav_merger.py "Anshu K.xlsx" "Rohil Kohli.xlsx"
+```
+
+See [QUICKSTART.md](QUICKSTART.md) for a complete quick start guide.
+
 ## Overview
 
 This tool helps combine PAV sheets where multiple engineers have updated different assets during verification. It intelligently merges the data by:
@@ -70,6 +82,43 @@ python pav_merger.py file1.xlsx file2.xlsx --key "Serial Number"
 - `-h, --help`: Show help message
 
 ## How It Works
+
+The merger uses an intelligent field-level merge strategy:
+
+```
+For each asset (identified by Asset Code):
+  For each field:
+    ┌─────────────────────────────────────┐
+    │ Is current value empty?             │
+    │ AND new value NOT empty?            │
+    └──────────┬──────────────────────────┘
+               │ YES
+               ▼
+    ┌──────────────────────────┐
+    │ Use new value            │
+    └──────────────────────────┘
+               
+               │ NO
+               ▼
+    ┌─────────────────────────────────────┐
+    │ Are both values non-empty           │
+    │ AND different?                      │
+    └──────────┬──────────────────────────┘
+               │ YES
+               ▼
+    ┌──────────────────────────┐
+    │ Use latest value         │
+    │ (report as conflict)     │
+    └──────────────────────────┘
+```
+
+**Example:**
+```
+Asset: 15C-SCN-X-28974
+  Anshu K.xlsx:      PAV Status = [empty]
+  Rohil Kohli.xlsx:  PAV Status = "Not Available"
+  Merged:            PAV Status = "Not Available" ✓
+```
 
 The merger follows this logic:
 
