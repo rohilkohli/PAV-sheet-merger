@@ -19,10 +19,8 @@ The web version allows you to:
 pip install -r requirements.txt
 
 # Merge your PAV sheets
-python pav_merger.py "Anshu K.xlsx" "Rohil Kohli.xlsx"
+python pav_merger.py "engineer1.xlsx" "engineer2.xlsx"
 ```
-
-See [QUICKSTART.md](QUICKSTART.md) for a complete quick start guide.
 
 ## Overview
 
@@ -71,7 +69,7 @@ All processing happens in your browser - no data is sent to any server.
 Merge two or more PAV sheets:
 
 ```bash
-python pav_merger.py "Anshu K.xlsx" "Rohil Kohli.xlsx"
+python pav_merger.py "engineer1.xlsx" "engineer2.xlsx"
 ```
 
 This will create a file named `merged_pav_sheet.xlsx` with all the combined data.
@@ -134,8 +132,8 @@ For each asset (identified by Asset Code):
 **Example:**
 ```
 Asset: 15C-SCN-X-28974
-  Anshu K.xlsx:      PAV Status = [empty]
-  Rohil Kohli.xlsx:  PAV Status = "Not Available"
+  engineer1.xlsx:    PAV Status = [empty]
+  engineer2.xlsx:    PAV Status = "Not Available"
   Merged:            PAV Status = "Not Available" ✓
 ```
 
@@ -156,12 +154,12 @@ The merger follows this logic:
 PAV Sheet Merger
 ============================================================
 Loading 2 file(s)...
-  ✓ Loaded Anshu K.xlsx: 709 rows
-  ✓ Loaded Rohil Kohli.xlsx: 709 rows
+  ✓ Loaded engineer1.xlsx: 709 rows
+  ✓ Loaded engineer2.xlsx: 709 rows
 
 Merging sheets...
 
-  Processing: Rohil Kohli.xlsx
+  Processing: engineer2.xlsx
     ↻ Updated 6 field(s) for: 15C-SCN-X-28974
     ↻ Updated 6 field(s) for: 19L-DTP-X-68011
     ...
@@ -185,12 +183,15 @@ Conflicts resolved: 0
 
 ```
 PAV-sheet-merger/
-├── pav_merger.py           # Main merger script
-├── requirements.txt        # Python dependencies
-├── README.md              # This file
-├── Anshu K.xlsx           # Sample input file 1
-├── Rohil Kohli.xlsx       # Sample input file 2
-└── merged_pav_sheet.xlsx  # Generated output (after running)
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml   # GitHub Pages deployment
+├── index.html                 # Web interface
+├── pav_merger.py             # Command-line merger script
+├── requirements.txt          # Python dependencies
+├── README.md                 # Documentation
+├── GITHUB_PAGES.md          # Deployment guide
+└── .gitignore               # Git ignore rules
 ```
 
 ## Requirements

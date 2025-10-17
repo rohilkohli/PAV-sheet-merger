@@ -9,9 +9,7 @@ and preserving all updates from different engineers.
 """
 
 import pandas as pd
-import openpyxl
 from pathlib import Path
-from datetime import datetime
 import argparse
 import sys
 
