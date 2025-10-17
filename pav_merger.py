@@ -218,7 +218,7 @@ def main():
         epilog="""
 Examples:
   # Merge two files
-  python pav_merger.py "Anshu K.xlsx" "Rohil Kohli.xlsx"
+  python pav_merger.py "engineer1.xlsx" "engineer2.xlsx"
   
   # Merge with custom output name
   python pav_merger.py file1.xlsx file2.xlsx -o final_pav.xlsx
