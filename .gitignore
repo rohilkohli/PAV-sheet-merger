@@ -24,6 +24,10 @@ Thumbs.db
 merged_pav_sheet.xlsx
 merged_*.xlsx
 
+# Sample/test Excel files
+*.xlsx
+!requirements.txt
+
 # Temporary files
 /tmp/
 *.tmp
